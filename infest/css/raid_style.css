@@ -83,6 +83,10 @@ nav ul li a {
     text-underline-offset: 2px;
 }
 
+.fa-plus {
+    font-size: 2rem;
+}
+
 nav ul li a .fa-table:hover {
     text-decoration: underline;
 }
@@ -111,8 +115,7 @@ img:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 1px;
-    padding: 4%;
+    padding: 1%;
     width: 100%;
 }
 
@@ -159,8 +162,8 @@ img:hover {
 
 .dropdown_imena {
     clear: both;
-    margin: 11% auto;
-    width: 30%;
+    margin: auto;
+    width: 24%;
 }
 
 .td.header {
@@ -179,16 +182,24 @@ img:hover {
     z-index: 1;
 }
 
-/*  
+  
 .table::-webkit-scrollbar {
-    width: 1px;
+    width: 8px;
 }
 
- .table::-webkit-scrollbar-thumb {
-    background-image: url('../img/2.png');
-    width: 100%;
-  }
+.table::-webkit-scrollbar-thumb {
+    background: #122d3f;
+    border-radius: 25px;
+}
 
+.table::-webkit-scrollbar-track {
+    background: #1aa9ba;
+    border-left: 3px solid #bfc3ff;
+    border-right: 3px solid #bfc3ff;
+    border-radius: 25px;
+}
+
+/*
 .table>:not(caption)>*>* {
     padding: 0%;
 }
@@ -222,6 +233,9 @@ img:hover {
 }
 
 .odabrani_container {
-    width: 50%;
+    width: 60%;
+    height: 200px;
+    columns: 50px auto;
+    column-fill: auto;
     margin: auto;
 }
