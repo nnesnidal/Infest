@@ -159,9 +159,8 @@ img:hover {
 
 .dropdown_imena {
     clear: both;
-    margin: auto;
-    padding: 2% 0%;
-    width: 120px;
+    margin: 11% auto;
+    width: 30%;
 }
 
 .td.header {
@@ -180,6 +179,7 @@ img:hover {
     z-index: 1;
 }
 
+/*  
 .table::-webkit-scrollbar {
     width: 1px;
 }
@@ -192,6 +192,7 @@ img:hover {
 .table>:not(caption)>*>* {
     padding: 0%;
 }
+*/
 
 .tr {
     display: table-row;
@@ -199,8 +200,6 @@ img:hover {
 
 .td, .th {
     display: table-cell;
-    width: 2%;
-    padding: 2px 0;
 }
 
 .td {
@@ -210,4 +209,19 @@ img:hover {
 
 .main_container button {
     border: none;
+}
+
+.cokolada {
+    width: 65%;
+    margin: 55px auto;
+}
+
+.cokolada td {
+    border: 1px solid black;
+    height: 60px;
+}
+
+.odabrani_container {
+    width: 50%;
+    margin: auto;
 }

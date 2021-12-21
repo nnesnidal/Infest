@@ -60,6 +60,45 @@
                 </ul>
             </nav>
         </div>
+
+        <!--SABLON-->
+        <table class="cokolada">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
     </div> 
 
     <div class="main_container">
@@ -77,7 +116,7 @@
             var searchbox = document.getElementById("searchbox");
             var SearchbBar = document.getElementById("SearchBar");
         
-            SearchbBar.onmouseover = function(){ 
+            SearchbBar.onclick = function(){ 
                 searchbox.classList.toggle("active");
             }
         </script>
@@ -85,11 +124,11 @@
         <!--ISPIS TABLICE-->
         <div class="dropdown_imena" id="dropdown_imena">
             
-            
         </div>
         <div class="odabrani_container" id="odabrani_container">
                 
         </div>
+
     </div>
         
 
