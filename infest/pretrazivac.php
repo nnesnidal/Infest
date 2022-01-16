@@ -1,14 +1,15 @@
 <script>
-    
     function odabraniMain(id, odabran) {
         if ($('#'+id).length === 0) {
+            if ($(".odabrani").length < 40) {
             //var redak = "<div class='redak' id='redak"+id+"'></div>";
             var odabrani = "<div class='odabrani' id='"+id+"'></div>";
-            var obrisiOdabranog = "<a class='obrisiOdabranog' id='obrisi"+id+"'>"+ odabran +"</a>";
+            var obrisiOdabranog = "<a class='obrisiOdabranog obrisiOdabranogStyle' id='obrisi"+id+"'>"+ odabran +"</a>";
             //$('#odabrani_container').append(redak);
             $('#odabrani_container').append(odabrani);
             //$('#odabrani_container').append(obrisiOdabranog);
             $('#'+id).append(obrisiOdabranog);
+            }
         }
         $(".obrisiOdabranog").click(function(){
             $(this).parent('div').remove();

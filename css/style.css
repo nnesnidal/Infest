@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background: #CDC8C3;
+}
+
+.title {
+    padding-top: 8%;
+    text-align: center;
+}
+
+.title h1 {
+    letter-spacing: 12px;
+    font-size: 52px;
+    color: #000000;
+    display: inline-block;
+    box-shadow: 2px 0 0 #000000;
+    overflow: hidden;
+    animation: textTyping 10s steps(6) infinite;
+}
+
+@keyframes textTyping
+{
+    0%,90%,100%
+    {
+        width: 0px;
+    }
+    30%,60%
+    {
+        width: 194.89px;
+    }
+}
+
+.container .card {
+    display: flex;
+    padding-top: 5%;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-right: 78px;
+}
+
+.container .card a {
+    text-decoration: none;
+    color: black;
+}
+
+.container .card .main-menu {
+    position: relative;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    width: 20%;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: inline-grid;
+    text-align: center;
+    padding-top: 2%;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 15px;
+}
+
+.container .card .main-menu:hover {
+    border-bottom: 1px solid rgba(32, 3, 29, 0.58);
+    border-right: 1px solid rgba(32, 3, 29, 0.58);
+    border-left: 1px solid rgba(32, 3, 29, 0.58);
+    border-top: 1px solid rgba(32, 3, 29, 0.58);
+}
+
+.container .card .main-menu h3 {
+    font-size: 25px;
+}
