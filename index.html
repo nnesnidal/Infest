@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Infest</title>
+</head>
+<body>
+    
+<div class="title">
+    <h1>INFEST</h1>
+</div>
+
+<div class="container">
+    <div class="card">
+        <a href="index.html">
+            <div class="main-menu">
+                <h3>Admin</h3>
+                <a href="index.html"><img src="img/admin.png" alt=""></a>
+            </div>
+        </a>
+
+    <a href="raid_page.php">
+        <div class="main-menu">
+            <h3>Raid</h3>
+            <a href="raid_page.php"><img src="img/raid.png" alt=""></a>
+        </div>
+    </a>
+
+    <a href="database_page.php">
+        <div class="main-menu">
+            <h3>Database</h3>
+            <a href="database_page.php"><img src="img/database.png" alt=""></a>
+        </div>
+    </a>   
+    </div>    
+</div>
+
+<script src="skripte/vanilla-tilt.min.js"></script>
+<script>
+    VanillaTilt.init(document.querySelectorAll(".main-menu"),{
+        max: 25,
+        speed: 400,
+        glare: true,
+        "max-glare": 1,
+    });
+</script>
+
+
+</body>
+</html>
