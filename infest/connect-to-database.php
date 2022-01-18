@@ -1,7 +1,7 @@
 <?php
     $servername = "localhost";
-    $username = "Infest";
-    $password = "infest";
+    $username = "infest";
+    $password = "infestinfest";
     $basename = "infest";
 
     $dbc = mysqli_connect($servername, $username, $password, $basename) or
