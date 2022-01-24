@@ -72,7 +72,7 @@
             //DELETE ROW AJAX
             $(".delbutton").click(function() {
                 var del_id = $(this).attr("id");
-                var info = 'id=' + del_id;
+                var info = 'id=' + del_id.replace("delete", "");
                     $.ajax({
                         type : "POST",
                         url : "delete.php",
@@ -274,7 +274,7 @@
             <div class="td"><?php echo $row['OS']; ?></div>
             <div class="td"><button id="icc<?php echo $row['id']; ?>" onclick="" class="icc_button free_saved_color"><?php echo $row['ICC']; ?></button></div>
             <div class="td"><button id="rs<?php echo $row['id']; ?>" onclick="" class="rs_button free_saved_color"><?php echo $row['RS']; ?></button></div>
-            <div class="td"><button id="<?php echo $row['id']; ?>" onclick="" class="delbutton"><img src="img/s_delete.png" alt=""></button></div>
+            <div class="td"><button id="delete<?php echo $row['id']; ?>" onclick="" class="delbutton"><img src="img/s_delete.png" alt=""></button></div>
         </div>
                 
         <?php
