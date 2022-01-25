@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -72,20 +73,17 @@
             //DELETE ROW AJAX
             $(".delbutton").click(function() {
                 var del_id = $(this).attr("id");
-                var info = 'id=' + del_id;
-                    $.ajax({
-                        type : "POST",
-                        url : "delete.php",
-                        data : info,
-                        success : function() {
-                            $(this).parents(".tr").css('padding', '0px');
-                        }
-                    });
-                    $(this).parents(".tr").animate("fast").animate({
-                        opacity : "hide"
-                    }, "slow");
-                    
-                return false; // prevents the default behavior (navigation) from occurring
+                var info = 'id=' + del_id.replace("delete", "");
+                $.ajax({
+                    type : "POST",
+                    url : "delete.php",
+                    data : info,
+                    success : function() {
+                    }
+                });
+                $(this).closest(".tr").hide(400, function(){
+                    this.remove(); 
+                });
             });
             //UPDATE ICC DATA FREE/SAVED AJAX
             $(".icc_button").click(function() {
@@ -167,12 +165,12 @@
                     <br>
                     <label for="main"><b>MAIN</b></label>
                     <br>
-                    <input type="text" autocomplete="off" name="main" value="">
+                    <input type="text" spellcheck="false" autocomplete="off" name="main" value="">
                     <p id="main_error"></p>
                     <br>
                     <label for="name"><b>NAME</b></label>
                     <br>
-                    <input type="text" autocomplete="off" name="name" id="name" onkeyup="checkNameAvailability()" value="">
+                    <input type="text" spellcheck="false" autocomplete="off" name="name" id="name" onkeyup="checkNameAvailability()" value="">
                     <p id="name_error"></p>
                     <br>
                     <label for="class"><b>CLASS</b></label>
@@ -184,14 +182,14 @@
                     <br>
                     <label for="ms"><b>MS</b></label>
                     <br>
-                    <select id="ms" name="ms">
+                    <select id="ms" class="select_ms_os" name="ms">
                         <option value="" selected="selected"></option>
                     </select>
                     <p id="ms_error"></p>
                     <br>
                     <label for="os"><b>OS</b></label>
                     <br>
-                    <select id="os" name="os">
+                    <select id="os" class="select_ms_os" name="os">
                         <option value="" selected="selected"></option>
                     </select>
                     <p id="os_error"></p>
@@ -274,7 +272,7 @@
             <div class="td"><?php echo $row['OS']; ?></div>
             <div class="td"><button id="icc<?php echo $row['id']; ?>" onclick="" class="icc_button free_saved_color"><?php echo $row['ICC']; ?></button></div>
             <div class="td"><button id="rs<?php echo $row['id']; ?>" onclick="" class="rs_button free_saved_color"><?php echo $row['RS']; ?></button></div>
-            <div class="td"><button id="<?php echo $row['id']; ?>" onclick="" class="delbutton"><img src="img/s_delete.png" alt=""></button></div>
+            <div class="td"><button id="delete<?php echo $row['id']; ?>" onclick="" class="delbutton"><img src="img/s_delete.png" alt=""></button></div>
         </div>
                 
         <?php
