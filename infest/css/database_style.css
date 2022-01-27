@@ -277,8 +277,7 @@ img:hover {
 .modal-content {
     background: rgba(255, 255, 255, 0.2);
     overflow: hidden;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
     backdrop-filter: blur(12px);
     border-radius: 10px;
     text-align: center;
@@ -290,26 +289,9 @@ img:hover {
     z-index:-1;
 }
 
-.modal-footer {
-    border-top: none;
-}
-
-.modal-body label {
-    color: black;
-    letter-spacing: 2px;
-    padding-top: 1%;
-}
-
-.modal-body input {
-    color: rgba(255, 255, 255, 0.54);
-    text-align: center;
-}
-
-.modal-body label b {
-    font-size: 16px;
-    color: #fafafa;
-    font-weight: 200;
-    font-family: 'Open san', sans-serif;
+.modal-body form {
+    clear: both;
+    position: relative;
 }
 
 .modal-content .modal-body .reset_popup {
@@ -326,9 +308,63 @@ img:hover {
     transform: scale(130%);
 }
 
-.modal-body form {
-    clear: both;
-    position: relative;
+.modal-body label {
+    letter-spacing: 2px;
+    padding-top: 1%;
+}
+
+.modal-body label b {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    font-family: 'Open san', sans-serif;
+}
+
+.modal-content .modal-body input {
+    background: transparent;
+    border: none;
+    color: black;
+    text-align: center;
+}
+
+.modal-content .modal-body input[type='text'], select.form-control {
+    border-bottom: 1px solid black;
+    font-size: 28px;
+    font-family: 'Caveat', cursive;
+}
+
+.modal-content .modal-body select {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    outline: none;
+}
+
+.select_ms_os {
+    min-width: 110.55px;
+}
+
+.modal-content .modal-body p {
+    color: #ff3333;
+    /*color: #f18f01;*/
+    letter-spacing: 0.5%;
+    height: 1px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0 auto;
+    font-family: 'Open san', sans-serif;
+    font-size: 14px;
+    padding: 1% 1%;
+    color: black;
+    /*
+    line-height: inherit;
+    resize: none;
+    -webkit-appearance: none;
+    */
 }
 
 .modal-content .modal-body .add_button {
@@ -351,65 +387,11 @@ img:hover {
     font-weight: bold;
 }
 
-.modal-content .modal-body select {
-    background-color: transparent;
-    border-color: black;
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
-}
-
-.modal-content .modal-body p {
-    color: #122d3f;
-    letter-spacing: 0.5%;
-    height: 1px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.modal-content .modal-body input {
-    background: transparent;
-    border: none;
-    border-bottom: 2px black;
-}
-
-.modal-content .modal-body select {
-    border: none;
-}
-
-.modal-content .modal-body input[type='text'], select.form-control {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid black;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    color: #36454F;
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.modal-content .modal-body input[type='text']:focus, select.form-control:focus {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border: none;
-}
-
-
 .modal-content .modal-body .button_modal_add{
     position: absolute;
     right: -76px;
     bottom: -42px;
     width: 48%;
-}
-
-button, input, optgroup, select, textarea {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    line-height: inherit;
-    font-weight: bold;
-    padding: 1% 1%;
-    color: #c9d8ed;
-    resize: none;
-    -webkit-appearance: none;
 }
 
 .icc_button {
@@ -429,28 +411,26 @@ button {
 }
 
 .free_modal {
-    color: #E9DCC9;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: bolder;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open san', sans-serif;
 }
 
 .free_button {
-    border: 2px solid #b4d5d0;
+    border: 2px solid rgba(255, 255, 255, 0.8);
     margin-top: 4%;
     padding: 0.2% 4%;
     border-radius: 5px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
     width: 30%;
     font-weight: bolder;
-    color: #E9DCC9;
+    color: rgba(255, 255, 255, 0.8);
     letter-spacing: 1px;
     backdrop-filter: blur(5px);
 }
 
 .free_button:hover {
-    border-color: #da8a9a;
-    color: black;
-    font-weight: bold;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 textarea:focus, input:focus{
