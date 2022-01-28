@@ -274,15 +274,27 @@ img:hover {
     outline-offset: none;
 }
 
+/*MODAL ADD CHARACTER*/
+
 .modal-content {
     background: rgba(255, 255, 255, 0.2);
     overflow: hidden;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    z-index: 100;
     border-radius: 10px;
     text-align: center;
     padding-bottom: 38px;
+}
+
+.modal-content:before {
+    content:"";
+    position: absolute;
+    z-index: -100;
+    backdrop-filter: blur(12px);
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
 }
 
 .modal-content .modal-body {
@@ -290,45 +302,96 @@ img:hover {
     z-index:-1;
 }
 
-.modal-footer {
-    border-top: none;
+.add_character {
+    clear: both;
+    position: relative;
 }
 
-.modal-body label {
-    color: black;
-    letter-spacing: 2px;
-    padding-top: 1%;
-}
-
-.modal-body input {
-    color: rgba(255, 255, 255, 0.54);
-    text-align: center;
-}
-
-.modal-body label b {
-    font-size: 16px;
-    color: #fafafa;
-    font-weight: 200;
-    font-family: 'Open san', sans-serif;
-}
-
-.modal-content .modal-body .reset_popup {
+.reset_popup {
     border: none;
     float: right;
-    width: 6%;
-    transition: 0.2s;
     position: absolute;
     right: 15px;
     z-index: 1;
 }
 
-.modal-content .modal-body .reset_popup:hover {
-    transform: scale(130%);
+.reset_popup .refresh_img {
+    display: block;
+    padding: 2%;
+    width: 35px;
 }
 
-.modal-body form {
-    clear: both;
+.modal-body label {
+    letter-spacing: 2px;
+    padding-top: 1%;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    font-family: 'Open san', sans-serif;
+}
+
+.modal-content .modal-body input {
+    background: transparent;
+    border: none;
+    color: black;
+    text-align: center;
+}
+
+.modal-content .modal-body input[type='text'], select.form-control {
+    border-bottom: 1px solid black;
+    font-size: 28px;
+    font-family: 'Caveat', cursive;
+}
+
+.show {
+    visibility: visible !important;
+}
+  
+.hide {
+    visibility: hidden !important;
+}
+
+.add_character_container {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    width: fit-content;
+    min-width: 86px;
+    min-height: 25px;
+    margin: auto;
+    font-weight: bold;
+    font-size: 16px;
     position: relative;
+    cursor: pointer;
+}
+
+.add_character_menu {
+    visibility: hidden;
+    z-index: 100;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    top: 100%;
+    border-radius: 5px;
+}
+
+.add_character_menu_item, .add_character_menu_item_class {
+    cursor: pointer;
+    width: 85px;
+}
+
+.add_character_menu_item:hover, .add_character_menu_item_class:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.modal-content .modal-body p {
+    color: #ff3333;
+    /*color: #f18f01;*/
+    letter-spacing: 0.5%;
+    height: 1px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
 }
 
 .modal-content .modal-body .add_button {
@@ -337,12 +400,13 @@ img:hover {
     padding: 0.2% 4%;
     border-radius: 5px;
     background: #122d3f;
-    width: 35%;
+    width: fit-content;
     font-weight: bolder;
     color: #fff;
     letter-spacing: 1px;
     font-family: 'Roboto', sans-serif;
-    padding: 1%;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 .modal-content .modal-body .add_button:hover {
@@ -351,66 +415,14 @@ img:hover {
     font-weight: bold;
 }
 
-.modal-content .modal-body select {
-    background-color: transparent;
-    border-color: black;
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
-}
-
-.modal-content .modal-body p {
-    color: #122d3f;
-    letter-spacing: 0.5%;
-    height: 1px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.modal-content .modal-body input {
-    background: transparent;
-    border: none;
-    border-bottom: 2px black;
-}
-
-.modal-content .modal-body select {
-    border: none;
-}
-
-.modal-content .modal-body input[type='text'], select.form-control {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid black;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    color: #36454F;
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.modal-content .modal-body input[type='text']:focus, select.form-control:focus {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border: none;
-}
-
-
 .modal-content .modal-body .button_modal_add{
     position: absolute;
-    right: -76px;
+    right: 0;
     bottom: -42px;
-    width: 48%;
+    width: fit-content;
 }
 
-button, input, optgroup, select, textarea {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    line-height: inherit;
-    font-weight: bold;
-    padding: 1% 1%;
-    color: #c9d8ed;
-    resize: none;
-    -webkit-appearance: none;
-}
+/**/
 
 .icc_button {
     color:white;
@@ -429,28 +441,26 @@ button {
 }
 
 .free_modal {
-    color: #E9DCC9;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: bolder;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open san', sans-serif;
 }
 
 .free_button {
-    border: 2px solid #b4d5d0;
+    border: 2px solid rgba(255, 255, 255, 0.8);
     margin-top: 4%;
     padding: 0.2% 4%;
     border-radius: 5px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
     width: 30%;
     font-weight: bolder;
-    color: #E9DCC9;
+    color: rgba(255, 255, 255, 0.8);
     letter-spacing: 1px;
     backdrop-filter: blur(5px);
 }
 
 .free_button:hover {
-    border-color: #da8a9a;
-    color: black;
-    font-weight: bold;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 textarea:focus, input:focus{
